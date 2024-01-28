@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solomon Key</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onbeforeunload="return myFunction()">
 
   <header>
-    <h1>Prova pilot aplicacio dels videojocs com a eina d'aprenentatge</h1>
+    <h1>Prova pilot: Aplicació dels videojocs com a eina d'aprenentatge</h1>
   </header>
 
   <main>
@@ -17,54 +18,59 @@
       <iframe src="https://www.retrogames.cc/embed/9885-solomons-key-us.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
       <div class="controls-table">
         <table>
-          <caption>Button Assignments</caption>
+          <caption>Controls</caption>
           <tr>
-            <th>Gamepad control</th>
-            <th>Original / Keyboard</th>
+            <th>Acció</th>
+            <th>Teclat</th>
           </tr>
           <tr>
+            <td>Saltar</td>
             <td>↑</td>
-            <td>↑</td>
           </tr>
           <tr>
+            <td>Ajupir-se</td>
             <td>↓</td>
-            <td>↓</td>
           </tr>
           <tr>
+            <td>Moure's a l'esquerre</td>
             <td>←</td>
-            <td>←</td>
           </tr>
           <tr>
-            <td>→</td>
+            <td>Moure's a la dreta</td>
             <td>→</td>
           </tr>
           <tr>
-            <td>A</td>
+            <td>Bola de foc</td>
             <td>X</td>
           </tr>
           <tr>
-            <td>B</td>
-            <td>Z</td>
+            <td>Crear/eliminar bloc</td>
+            <td>S</td>
           </tr>
           <tr>
-            <td>SELECT</td>
-            <td>Shift</td>
+            <td>Afegir moneda</td>
+            <td>Shift dret</td>
           </tr>
           <tr>
-            <td>START</td>
+            <td>Start</td>
             <td>Enter</td>
           </tr>
         </table>
       </div>
     </div>
     <div class="google-form">
-      <h2>Google Form</h2>
-      <iframe src="https://docs.google.com/forms/d/e/your_form_id/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <h2>Qüestionari setmanal</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdpZspNBcjZPQaK7_iDOwty2KJ-S7l5umkgEx8zuqpmtrOirA/viewform?embedded=true" width="640" height="899" frameborder="0" marginheight="0" marginwidth="0">S&#39;està carregant…</iframe>
     </div>
   </main>
 
-</body>
-</html>
+<script>
+function myFunction() {
+	event.preventDefault();
+	return "";
+}
+</script>
 
+</body>
 
 
