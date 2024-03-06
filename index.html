@@ -1,70 +1,96 @@
-<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solomon Key</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onbeforeunload="return myFunction()">
 
   <header>
-    <h1>Prova pilot aplicacio dels videojocs com a eina d'aprenentatge</h1>
+    <h1>Prova pilot: Aplicació dels videojocs com a eina d'aprenentatge</h1>
   </header>
 
   <main>
     <div class="container">
-      <iframe src="https://www.retrogames.cc/embed/9885-solomons-key-us.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+      <canvas id="canvas" style="width: 50%; height: 50%; display: block; margin: 0 auto;"></canvas>
+      <script type="text/javascript" src="es6-promise.js"></script>
+      <script type="text/javascript" src="browserfs.min.js"></script>
+      <script type="text/javascript" src="loader.js"></script>
+      <script type="text/javascript">
+        
+        var emulator = new Emulator(document.querySelector("#canvas"),
+                                    null,
+                                    new JSMAMELoader(JSMAMELoader.driver("solomon"),
+                                                     JSMAMELoader.nativeResolution(256, 256),
+                                                     JSMAMELoader.scale(3),
+                                                     JSMAMELoader.emulatorJS("binaries/mamesolomon.js"),
+                                                     //JSMAMELoader.emulatorJS("binaries/mamearcadecl.js"),
+                                                     //JSMAMELoader.emulatorJS("binaries/messsolomon.js"),
+                                                     //JSMAMELoader.emulatorJS("binaries/mameexidy.js"),
+                                                     JSMAMELoader.mountFile("solomonj.zip",
+                                                                            JSMAMELoader.fetchFile("Game File",
+                                                                                                   "binaries/solomon.zip"))
+                                                                                                   ))                                                           
+        emulator.start({ waitAfterDownloading: true });
+      </script>
       <div class="controls-table">
         <table>
-          <caption>Button Assignments</caption>
+          <caption>Controls</caption>
           <tr>
-            <th>Gamepad control</th>
-            <th>Original / Keyboard</th>
+            <th>Acció</th>
+            <th>Teclat</th>
           </tr>
           <tr>
+            <td>Saltar</td>
             <td>↑</td>
-            <td>↑</td>
           </tr>
           <tr>
+            <td>Ajupir-se</td>
             <td>↓</td>
-            <td>↓</td>
           </tr>
           <tr>
+            <td>Moure's a l'esquerre</td>
             <td>←</td>
-            <td>←</td>
           </tr>
           <tr>
+            <td>Moure's a la dreta</td>
             <td>→</td>
-            <td>→</td>
           </tr>
           <tr>
-            <td>A</td>
-            <td>X</td>
+            <td>Bola de foc</td>
+            <td>Alt</td>
           </tr>
           <tr>
-            <td>B</td>
-            <td>Z</td>
+            <td>Crear/eliminar bloc</td>
+            <td>Ctrl</td>
           </tr>
           <tr>
-            <td>SELECT</td>
-            <td>Shift</td>
+            <td>Afegir moneda</td>
+            <td>5</td>
           </tr>
           <tr>
-            <td>START</td>
-            <td>Enter</td>
+            <td>Start</td>
+            <td>1</td>
           </tr>
         </table>
       </div>
     </div>
     <div class="google-form">
-      <h2>Google Form</h2>
-      <iframe src="https://docs.google.com/forms/d/e/your_form_id/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <h2>Qüestionari setmanal</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdpZspNBcjZPQaK7_iDOwty2KJ-S7l5umkgEx8zuqpmtrOirA/viewform?embedded=true" width="640" height="899" frameborder="0" marginheight="0" marginwidth="0">S&#39;està carregant…</iframe>
     </div>
   </main>
 
-</body>
-</html>
+<script>
+function myFunction() {
+	event.preventDefault();
+	return "";
+}
+</script>
 
+</body>
 
 
