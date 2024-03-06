@@ -27,12 +27,10 @@
                                                      JSMAMELoader.nativeResolution(256, 256),
                                                      JSMAMELoader.scale(3),
                                                      JSMAMELoader.emulatorJS("binaries/mamesolomon.js"),
-                                                     //JSMAMELoader.emulatorJS("binaries/mamearcadecl.js"),
-                                                     //JSMAMELoader.emulatorJS("binaries/messsolomon.js"),
-                                                     //JSMAMELoader.emulatorJS("binaries/mameexidy.js"),
-                                                     JSMAMELoader.mountFile("solomonj.zip",
+                                                     JSMAMELoader.extraArgs(["-verbose","-ui_active","-lowlatency","-nowaitvsync","-nofilter","-renderdriver","opengles2","-autoboot_delay","3"]), 
+                                                     JSMAMELoader.mountFile("solomon",
                                                                             JSMAMELoader.fetchFile("Game File",
-                                                                                                   "binaries/solomon.zip"))
+                                                                                                   "binaries/solomon/"))
                                                                                                    ))                                                           
         emulator.start({ waitAfterDownloading: true });
       </script>
